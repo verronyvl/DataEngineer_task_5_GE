@@ -1,0 +1,165 @@
+{
+  "data_asset_type": "Dataset",
+  "expectation_suite_name": "aurzov_suite",
+  "expectations": [
+    {
+      "expectation_type": "expect_table_column_count_to_equal",
+      "kwargs": {
+        "value": 8
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_table_columns_to_match_ordered_list",
+      "kwargs": {
+        "column_list": [
+          "user_id",
+          "pay_doc_type",
+          "pay_doc_num",
+          "account",
+          "phone",
+          "billing_period",
+          "pay_date",
+          "sum"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "pay_doc_type"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_distinct_values_to_be_in_set",
+      "kwargs": {
+        "column": "pay_doc_type",
+        "value_set": [
+          "MASTER",
+          "MIR",
+          "VISA"
+        ]
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "pay_doc_num"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_unique",
+      "kwargs": {
+        "column": "pay_doc_num"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "account"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_match_regex",
+      "kwargs": {
+        "column": "account",
+        "regex": "[FL-]+"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_not_be_null",
+      "kwargs": {
+        "column": "pay_date"
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_between",
+      "kwargs": {
+        "column": "pay_date",
+        "max_value": "2021-05-23 11:29:15.459744",
+        "min_value": "2012-01-05 00:00:00",
+        "parse_strings_as_datetimes": true
+      },
+      "meta": {}
+    },
+    {
+      "expectation_type": "expect_column_values_to_be_of_type",
+      "kwargs": {
+        "column": "sum",
+        "type_": "NUMERIC"
+      },
+      "meta": {}
+    }
+  ],
+  "meta": {
+    "BasicSuiteBuilderProfiler": {
+      "batch_kwargs": {
+        "data_asset_name": "public.ods_payments",
+        "datasource": "gp",
+        "limit": 1000,
+        "schema": "public",
+        "table": "ods_payments"
+      },
+      "created_at": 1621732304.7278783,
+      "created_by": "BasicSuiteBuilderProfiler"
+    },
+    "citations": [
+      {
+        "batch_kwargs": {
+          "data_asset_name": "public.ods_payments",
+          "datasource": "gp",
+          "limit": 1000,
+          "schema": "public",
+          "table": "ods_payments"
+        },
+        "batch_markers": {
+          "ge_load_time": "20210523T011123.969691Z"
+        },
+        "batch_parameters": null,
+        "citation_date": "20210523T011150.829227Z",
+        "comment": "BasicSuiteBuilderProfiler added a citation based on the current batch."
+      }
+    ],
+    "columns": {
+      "account": {
+        "description": ""
+      },
+      "billing_period": {
+        "description": ""
+      },
+      "pay_date": {
+        "description": ""
+      },
+      "pay_doc_num": {
+        "description": ""
+      },
+      "pay_doc_type": {
+        "description": ""
+      },
+      "phone": {
+        "description": ""
+      },
+      "sum": {
+        "description": ""
+      },
+      "user_id": {
+        "description": ""
+      }
+    },
+    "great_expectations_version": "0.13.14",
+    "notes": {
+      "content": [
+        "#### This is an _example_ suite\n\n- This suite was made by quickly glancing at 1000 rows of your data.\n- This is **not a production suite**. It is meant to show examples of expectations.\n- Because this suite was auto-generated using a very basic profiler that does not know your data like you do, many of the expectations may not be meaningful.\n"
+      ],
+      "format": "markdown"
+    }
+  }
+}
